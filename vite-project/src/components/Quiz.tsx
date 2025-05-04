@@ -6,20 +6,6 @@ import { Label } from "@/components/ui/label";
 import { ArrowLeft, ArrowRight, Check, CheckCircle, AlertCircle } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
 
-// Simple form implementation to replace react-hook-form
-interface UseFormReturn {
-  handleSubmit: (callback: (data: Record<string, any>) => void) => (e: React.FormEvent) => void;
-}
-
-const useForm = (): UseFormReturn => {
-  return {
-    handleSubmit: (callback) => (e) => {
-      e.preventDefault();
-      callback({});
-    }
-  };
-};
-
 // Note: Storing API keys in frontend code is not secure for production applications
 // For educational purposes only - Consider using environment variables for production
 const API_KEY = import.meta.env.VITE_GEMINI_API_KEY || "AIzaSyCfHEexOBjjTW3VMl38KYm4h83CWiqK_60";

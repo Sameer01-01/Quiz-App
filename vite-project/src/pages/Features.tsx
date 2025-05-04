@@ -1,4 +1,3 @@
-import { ReactElement } from 'react';
 import { Star, Rocket, Play } from "lucide-react";
 
 const Features = () => {
