@@ -28,11 +28,12 @@ const Navbar = () => {
         <div className="hidden md:flex items-center gap-8">
           <a href="#features" className="font-medium text-sm hover:text-quiz-purple transition-colors">Features</a>
           <a href="#howItWorks" className="font-medium text-sm hover:text-quiz-purple transition-colors">How It Works</a>
-          
         </div>
         
         <div className="flex items-center gap-4">
-          <Button variant="ghost" className="hidden md:inline-flex font-medium">
+          <Button 
+            className="hidden md:inline-flex font-medium bg-transparent hover:bg-gray-100"
+          >
             Login
           </Button>
           <Button className="bg-quiz-gradient p-3 hover:bg-quiz-purple/90 font-medium">

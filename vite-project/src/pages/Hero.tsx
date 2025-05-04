@@ -2,7 +2,11 @@ import React from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles } from "lucide-react";
 
-const Hero = () => {
+interface HeroProps {
+  onStartQuiz: () => void;
+}
+
+const Hero: React.FC<HeroProps> = ({ onStartQuiz }) => {
   return (
     <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden quiz-blur-bg">
       <div className="animated-bg"></div>
@@ -22,7 +26,10 @@ const Hero = () => {
             Dive into thousands of engaging quizzes across various topics. Learn, compete, and have fun while expanding your knowledge horizons.
           </p>
           
-          <Button className="bg-quiz-gradient hover:opacity-90 text-white font-medium px-8 py-6 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2 group">
+          <Button 
+            className="bg-quiz-gradient hover:opacity-90 text-white font-medium px-8 py-6 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2 group"
+            onClick={onStartQuiz}
+          >
             Get Started
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </Button>
