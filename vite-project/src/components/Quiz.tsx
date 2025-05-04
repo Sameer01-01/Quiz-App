@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect, FormEvent } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
@@ -340,7 +340,7 @@ const Quiz = () => {
     setStep('questions');
   };
 
-  const handleTopicSubmit = (e: React.FormEvent) => {
+  const handleTopicSubmit = (e: FormEvent) => {
     e.preventDefault();
     console.log("Topic submitted:", topic);
     
@@ -356,7 +356,7 @@ const Quiz = () => {
     setStep('count');
   };
 
-  const handleCountSubmit = (e: React.FormEvent) => {
+  const handleCountSubmit = (e: FormEvent) => {
     e.preventDefault();
     console.log("Count submitted, generating questions...");
     generateQuestions();

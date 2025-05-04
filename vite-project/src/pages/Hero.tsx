@@ -1,4 +1,3 @@
-import React from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles } from "lucide-react";
 
@@ -6,7 +5,7 @@ interface HeroProps {
   onStartQuiz: () => void;
 }
 
-const Hero: React.FC<HeroProps> = ({ onStartQuiz }) => {
+const Hero = ({ onStartQuiz }: HeroProps) => {
   return (
     <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden quiz-blur-bg">
       <div className="animated-bg"></div>

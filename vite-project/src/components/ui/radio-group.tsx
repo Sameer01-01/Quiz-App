@@ -1,7 +1,7 @@
-import React from "react";
+import { ReactNode } from 'react';
 
 interface RadioGroupProps {
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
 }
 
@@ -10,16 +10,14 @@ export function RadioGroup({ children, className = "" }: RadioGroupProps) {
 }
 
 interface RadioGroupItemProps {
-  value: string;
   id: string;
   checked?: boolean;
   onChange?: () => void;
   className?: string;
-  children?: React.ReactNode;
+  children?: ReactNode;
 }
 
 export function RadioGroupItem({ 
-  value, 
   id, 
   checked, 
   onChange, 
@@ -31,7 +29,6 @@ export function RadioGroupItem({
       <input
         type="radio"
         id={id}
-        value={value}
         checked={checked}
         onChange={onChange}
         className={`h-4 w-4 rounded-full border-gray-300 text-primary focus:ring-primary ${className}`}

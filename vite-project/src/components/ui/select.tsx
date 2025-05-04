@@ -1,7 +1,7 @@
-import React, { useRef, useEffect } from "react";
+import { ReactNode, useRef, useEffect } from "react";
 
 interface SelectProps {
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
 }
 
@@ -30,7 +30,7 @@ export const Select = ({ children, className = "" }: SelectProps) => {
 
 interface SelectTriggerProps {
   className?: string;
-  children?: React.ReactNode;
+  children?: ReactNode;
   onClick?: () => void;
 }
 
@@ -50,7 +50,7 @@ export const SelectTrigger = ({ children, className = "", onClick }: SelectTrigg
 };
 
 interface SelectContentProps {
-  children?: React.ReactNode;
+  children?: ReactNode;
   className?: string;
 }
 
@@ -66,7 +66,7 @@ export const SelectContent = ({ children, className = "" }: SelectContentProps) 
 
 interface SelectItemProps {
   value: string;
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
   onClick?: () => void;
 }
@@ -87,7 +87,7 @@ export const SelectItem = ({ value, children, className = "", onClick }: SelectI
 
 interface SelectValueProps {
   placeholder?: string;
-  children?: React.ReactNode;
+  children?: ReactNode;
 }
 
 export const SelectValue = ({ placeholder, children }: SelectValueProps) => {

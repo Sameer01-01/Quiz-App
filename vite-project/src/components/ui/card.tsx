@@ -1,8 +1,8 @@
-import React, { HTMLAttributes } from "react";
+import { forwardRef, HTMLAttributes } from "react";
 
 export interface CardProps extends HTMLAttributes<HTMLDivElement> {}
 
-const Card = React.forwardRef<HTMLDivElement, CardProps>(
+const Card = forwardRef<HTMLDivElement, CardProps>(
   ({ className = "", ...props }, ref) => {
     return (
       <div
@@ -15,7 +15,7 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
 );
 Card.displayName = "Card";
 
-const CardHeader = React.forwardRef<
+const CardHeader = forwardRef<
   HTMLDivElement,
   HTMLAttributes<HTMLDivElement>
 >(({ className = "", ...props }, ref) => {
@@ -29,7 +29,7 @@ const CardHeader = React.forwardRef<
 });
 CardHeader.displayName = "CardHeader";
 
-const CardTitle = React.forwardRef<
+const CardTitle = forwardRef<
   HTMLParagraphElement,
   HTMLAttributes<HTMLHeadingElement>
 >(({ className = "", ...props }, ref) => {
@@ -43,7 +43,7 @@ const CardTitle = React.forwardRef<
 });
 CardTitle.displayName = "CardTitle";
 
-const CardContent = React.forwardRef<
+const CardContent = forwardRef<
   HTMLDivElement,
   HTMLAttributes<HTMLDivElement>
 >(({ className = "", ...props }, ref) => {
@@ -51,7 +51,7 @@ const CardContent = React.forwardRef<
 });
 CardContent.displayName = "CardContent";
 
-const CardFooter = React.forwardRef<
+const CardFooter = forwardRef<
   HTMLDivElement,
   HTMLAttributes<HTMLDivElement>
 >(({ className = "", ...props }, ref) => {
