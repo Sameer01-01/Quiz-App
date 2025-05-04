@@ -1,14 +1,11 @@
 import React from "react";
 
 interface RadioGroupProps {
-  value?: string;
-  onValueChange?: (value: string) => void;
   children: React.ReactNode;
   className?: string;
 }
 
-export function RadioGroup({ value, onValueChange, children, className = "" }: RadioGroupProps) {
-  // Simple wrapper for layout
+export function RadioGroup({ children, className = "" }: RadioGroupProps) {
   return <div className={`space-y-2 ${className}`}>{children}</div>;
 }
 

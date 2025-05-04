@@ -2,11 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
-import { Form, FormField, FormItem, FormControl } from "@/components/ui/form";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { ArrowLeft, ArrowRight, Check, CheckCircle, X, AlertCircle } from "lucide-react";
+import { ArrowLeft, ArrowRight, Check, CheckCircle, AlertCircle } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
 
 // Simple form implementation to replace react-hook-form
@@ -48,10 +45,6 @@ const Quiz = () => {
   const [apiAvailable, setApiAvailable] = useState<boolean>(true);
   const { toast } = useToast();
 
-  const topicForm = useForm();
-  const countForm = useForm();
-
-  // Check API availability on component mount
   useEffect(() => {
     const checkApiAvailability = async () => {
       try {
@@ -206,7 +199,6 @@ const Quiz = () => {
   // Fallback mock question generator
   const generateMockQuestions = () => {
     console.log("Generating mock questions as fallback");
-    // Generate mock questions based on topic and count
     const mockQuestions: Question[] = [];
     
     const getTopicBasedQuestions = (topic: string): Question[] => {
@@ -295,7 +287,6 @@ const Quiz = () => {
           }
         ];
       } else {
-        // Default general knowledge questions
         return [
           {
             question: "Which planet is known as the Red Planet?",
@@ -326,17 +317,13 @@ const Quiz = () => {
       }
     };
     
-    // Get questions based on topic
     const availableQuestions = getTopicBasedQuestions(topic);
     
-    // Take only the requested number of questions
     for (let i = 0; i < Math.min(questionCount, availableQuestions.length); i++) {
       mockQuestions.push(availableQuestions[i]);
     }
     
-    // If we need more questions than our pre-defined set
     if (questionCount > mockQuestions.length) {
-      // Add some generic questions to fill the gap
       const genericQuestions: Question[] = [
         {
           question: "Which is the largest mammal in the world?",
@@ -362,10 +349,8 @@ const Quiz = () => {
     
     console.log("Mock questions generated:", mockQuestions.length);
     setQuestions(mockQuestions);
-    // Initialize answers array with empty strings
     setAnswers(new Array(mockQuestions.length).fill(""));
     
-    // Move to questions step
     setStep('questions');
   };
 
@@ -382,7 +367,6 @@ const Quiz = () => {
       return;
     }
     
-    // Move to next step
     setStep('count');
   };
 
@@ -412,7 +396,6 @@ const Quiz = () => {
   };
 
   const handleSubmit = () => {
-    // Calculate score
     let newScore = 0;
     questions.forEach((question, index) => {
       if (answers[index] === question.correctAnswer) {
@@ -439,7 +422,6 @@ const Quiz = () => {
     setShowAnswers(false);
   };
 
-  // Determine if an answer was correct
   const isCorrectAnswer = (questionIndex: number) => {
     return answers[questionIndex] === questions[questionIndex].correctAnswer;
   };
@@ -490,8 +472,6 @@ const Quiz = () => {
               <CardContent className="space-y-6">
                 <div className="space-y-2">
                   <Label htmlFor="count">How many questions do you want?</Label>
-                  
-                  {/* Custom select implementation */}
                   <div className="relative w-full">
                     <select
                       id="question-count"
@@ -637,7 +617,6 @@ const Quiz = () => {
                       : "Keep learning! You'll do better next time."}
               </div>
               
-              {/* Answer Review Section */}
               {showAnswers && (
                 <div className="border-t pt-4 mt-2">
                   <h3 className="text-lg font-medium mb-4 text-left">Your Answers:</h3>
