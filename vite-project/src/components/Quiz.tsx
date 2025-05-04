@@ -523,7 +523,7 @@ const Quiz = () => {
                 </Button>
                 <Button 
                   type="submit" 
-                  className="bg-quiz-gradient hover:bg-quiz-purple/90 text-white"
+                  className="bg-quiz-gradient px-4 py-2 hover:bg-quiz-purple/90 text-white"
                   disabled={isLoading}
                 >
                   {isLoading ? 'Generating...' : 'Start Quiz'} 
@@ -599,7 +599,7 @@ const Quiz = () => {
                 </Button>
               ) : (
                 <Button 
-                  className="bg-quiz-gradient hover:bg-quiz-purple/90 text-white"
+                  className="bg-quiz-gradient hover:bg-quiz-purple/90 text-white py-2 px-4"
                   onClick={handleNext}
                 >
                   Next <ArrowRight className="ml-2 h-4 w-4" />
