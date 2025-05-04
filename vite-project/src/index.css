@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 250 100% 99%;
+    --foreground: 240 10% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    --primary: 255 92% 76%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 240 5.9% 10%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    --accent: 254 75% 95%;
+    --accent-foreground: 240 5.9% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 254 71% 61%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+  
+  .quiz-blur-bg {
+    @apply relative;
+  }
+  
+  .quiz-blur-bg::before {
+    content: "";
+    @apply absolute -z-10 w-[200px] h-[200px] rounded-full bg-quiz-purple/30 blur-[120px] top-20 -left-20;
+  }
+  
+  .quiz-blur-bg::after {
+    content: "";
+    @apply absolute -z-10 w-[200px] h-[200px] rounded-full bg-quiz-blue/30 blur-[120px] bottom-20 -right-20;
+  }
+  
+  .quiz-glass {
+    @apply bg-white/60 backdrop-blur-xl border border-white/20 shadow-lg;
+  }
+  
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-quiz-gradient;
+  }
+  
+  .quiz-card {
+    @apply relative overflow-hidden rounded-2xl bg-quiz-card-gradient border border-white/50 shadow-lg hover:shadow-xl transition-all duration-300;
+  }
+  
+  .quiz-card::before {
+    content: "";
+    @apply absolute inset-0 bg-white/40 backdrop-blur-sm z-0;
+  }
+  
+  .animated-bg {
+    @apply absolute -z-10 w-full h-full top-0 left-0 bg-gradient-to-br from-quiz-purple/5 to-quiz-blue/5 animate-pulse-slow;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c4b5fd;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #8B5CF6;
+}
