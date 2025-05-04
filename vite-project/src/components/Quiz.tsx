@@ -572,7 +572,7 @@ const Quiz = () => {
               
               {isLastQuestion ? (
                 <Button 
-                  className="bg-quiz-gradient hover:bg-quiz-purple/90 text-white"
+                  className="bg-quiz-gradient py-2 px-4 hover:bg-quiz-purple/90 text-white"
                   onClick={handleSubmit}
                 >
                   <Check className="mr-2 h-4 w-4" /> Submit
